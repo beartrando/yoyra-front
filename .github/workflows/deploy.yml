@@ -188,12 +188,13 @@ jobs:
           EOF
 
 
-      - name: Test Google auth
+      - name: Test Google authentication
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.auth.outputs.credentials_file_path }}
         run: |
           echo "Testing Google authentication..."
-          gcloud auth list
-          gcloud auth print-access-token > /dev/null
-          echo "Google access token obtained successfully"
+          gcloud auth application-default print-access-token > /dev/null
+          echo "Google authentication successful"
 
       - name: Debug Google credentials
         run: |
