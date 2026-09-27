@@ -201,7 +201,7 @@ jobs:
         uses: r0adkll/upload-google-play@v1
         with:
           serviceAccountJson: google-play.json
-          packageName: org.beartrando.tictactoe
+          packageName: org.beartrando.yoyra
           releaseFiles: build/app/outputs/bundle/release/app-release.aab
           tracks: internal
           whatsNewDirectory: ./release-notes
@@ -211,7 +211,7 @@ jobs:
         uses: r0adkll/upload-google-play@v1
         with:
           serviceAccountJson: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
-          packageName: org.beartrando.tictactoe
+          packageName: org.beartrando.yoyra
           releaseFiles: build/app/outputs/bundle/release/app-release.aab
           tracks: production
           whatsNewDirectory: ./release-notes
